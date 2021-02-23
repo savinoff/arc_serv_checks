@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>{{ check_list.code }}</title></head>
+<body>
+{{ check_list.name }} <br/>
+   <table>
+
+      {% for check in check_list %}
+            <td>
+               <tr>{{ check.code }}</tr>
+               <tr>{{ check.name }}</tr>
+               <tr>{{ check.result.result_code }}</tr>
+               <tr>{{ check.result.result_description }}</tr>
+               {% if not loop.last %},{% endif %}
+            </td>
+      {% endfor %}
+
+
+   </table>
+</body>
+</html>
